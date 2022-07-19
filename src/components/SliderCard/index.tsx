@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { SliderCardProps } from './interfaces'
 import {
   SliderCardContainer,
   CardHeader,
@@ -16,23 +17,31 @@ import {
   CardContentPriceAfter
 } from './styles'
 
-export default function SliderCard () {
+export default function SliderCard ({
+  days,
+  destination,
+  images,
+  oldPriceBeautify,
+  fromPriceBeautify,
+  pricingPercentage,
+  title
+}: SliderCardProps) {
   return (
     <SliderCardContainer>
       <CardHeader>
-        <CardHeaderCampaign>-30%</CardHeaderCampaign>
-        <CardHeaderImage src="https://d24l7zeiclq6su.cloudfront.net/img/p/10487/c279584.jpg" />
+        <CardHeaderCampaign>-{pricingPercentage}%</CardHeaderCampaign>
+        <CardHeaderImage src={images.desktop} />
         <CardHeaderTitleWrapper>
-          <CardHeaderTitle>Jordan</CardHeaderTitle>
-          <CardHeaderSubTitle>9 Days</CardHeaderSubTitle>
+          <CardHeaderTitle>{destination}</CardHeaderTitle>
+          <CardHeaderSubTitle>{days} Days</CardHeaderSubTitle>
         </CardHeaderTitleWrapper>
       </CardHeader>
       <CardContent>
-        <CardContentTitle>Wonders of the Hashemite Kingdom</CardContentTitle>
+        <CardContentTitle>{title}</CardContentTitle>
         <CardContentPriceWrapper>
           <CardContentPriceFrom>From</CardContentPriceFrom>
-          <CardContentPriceBefore>$2,719</CardContentPriceBefore>
-          <CardContentPriceAfter>$1,799</CardContentPriceAfter>
+          <CardContentPriceBefore>{oldPriceBeautify}</CardContentPriceBefore>
+          <CardContentPriceAfter>{fromPriceBeautify}</CardContentPriceAfter>
         </CardContentPriceWrapper>
       </CardContent>
     </SliderCardContainer>

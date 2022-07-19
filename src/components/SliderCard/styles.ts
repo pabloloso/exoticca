@@ -19,7 +19,6 @@ export const CardHeaderTitleWrapper = styled.div`
   bottom: 0px;
   left: 0px;
   padding: 16px;
-  width: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
 `
 

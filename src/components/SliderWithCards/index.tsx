@@ -4,6 +4,8 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
+import data from 'mocks/home.json'
+
 import SliderArrow from 'components/SliderArrow'
 import SliderCard from 'components/SliderCard'
 
@@ -39,18 +41,18 @@ export default function SliderWithCards () {
   return (
     <SliderWithCardsContainer>
       <Slider {...settings}>
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
+        {data.slides[0].cards.map(card => (
+          <SliderCard
+            key={card.id}
+            days={card.days}
+            destination={card.destination}
+            images={card.images[0]}
+            oldPriceBeautify={card.priceDetail.oldPriceBeautify}
+            fromPriceBeautify={card.priceDetail.fromPriceBeautify}
+            pricingPercentage={card.priceDetail.pricingPercentage}
+            title={card.title}
+          />
+        ))}
       </Slider>
     </SliderWithCardsContainer>
   )
