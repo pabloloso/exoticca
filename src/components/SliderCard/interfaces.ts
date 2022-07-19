@@ -1,8 +1,4 @@
-interface Images {
-  desktop: string
-  mobile: string
-  tablet: string
-}
+import { Images } from 'interfaces/Slider'
 
 export interface SliderCardProps {
   days: number

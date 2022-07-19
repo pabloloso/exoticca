@@ -4,14 +4,13 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-import data from 'mocks/home.json'
-
 import SliderArrow from 'components/SliderArrow'
 import SliderCard from 'components/SliderCard'
 
+import { SliderWithCardsProps } from './interfaces'
 import { SliderWithCardsContainer } from './styles'
 
-export default function SliderWithCards () {
+export default function SliderWithCards ({ cards }: SliderWithCardsProps) {
   const settings = {
     infinite: false,
     speed: 500,
@@ -41,7 +40,7 @@ export default function SliderWithCards () {
   return (
     <SliderWithCardsContainer>
       <Slider {...settings}>
-        {data.slides[0].cards.map(card => (
+        {cards.map(card => (
           <SliderCard
             key={card.id}
             days={card.days}
