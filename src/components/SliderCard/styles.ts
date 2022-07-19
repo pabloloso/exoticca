@@ -9,8 +9,7 @@ export const SliderCardContainer = styled.div`
 export const CardHeader = styled.div`
   position: relative;
   overflow: hidden;
-  height: 0;
-  padding-top: 75%;
+  height: 275px;
 `
 
 export const CardHeaderTitleWrapper = styled.div`
@@ -19,6 +18,7 @@ export const CardHeaderTitleWrapper = styled.div`
   bottom: 0px;
   left: 0px;
   padding: 16px;
+  width: calc(100% - 32px);
   background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
 `
 
